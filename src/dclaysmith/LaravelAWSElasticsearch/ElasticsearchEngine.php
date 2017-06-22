@@ -25,7 +25,6 @@ class ElasticsearchEngine extends Engine
      */
     public function __construct(Elastic $elastic, $index)
     {
-
         $this->elastic = $elastic;
         $this->index = $index;
     }

@@ -13,14 +13,14 @@ class SignedElasticsearchEngine extends ElasticsearchEngine
      */
     public function __construct()
     {
-        $handler = new ElasticsearchPhpHandler('eu-west-1');
-        
+        $handler = new ElasticsearchPhpHandler('us-east-1');
+
         $elasticsearch = ClientBuilder::create()
             ->setHandler($handler)
             ->setHosts(config('scout.elasticsearch.config.hosts'))
             ->build();
 
-        $this->elasticsearch = $elasticsearch;
+        $this->elastic = $elasticsearch;
         $this->index = config('scout.elasticsearch.index');
     }
 }

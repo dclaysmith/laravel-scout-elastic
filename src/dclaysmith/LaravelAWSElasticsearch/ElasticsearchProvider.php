@@ -21,8 +21,8 @@ class ElasticsearchProvider extends ServiceProvider
             );
         });
 
-        resolve(EngineManager::class)->extend('signed-elasticsearch', function () {
+        app(EngineManager::class)->extend('signed-elasticsearch', function () {
             return new SignedElasticsearchEngine;
-        });        
+        });  
     }
 }
