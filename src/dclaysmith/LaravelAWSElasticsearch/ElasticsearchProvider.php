@@ -20,5 +20,9 @@ class ElasticsearchProvider extends ServiceProvider
                 config('scout.elasticsearch.index')
             );
         });
+
+        resolve(EngineManager::class)->extend('signed-elasticsearch', function () {
+            return new SignedElasticsearchEngine;
+        });        
     }
 }
