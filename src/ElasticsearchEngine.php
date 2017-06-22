@@ -8,6 +8,11 @@ use Elasticsearch\Client as Elastic;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Collection as BaseCollection;
 
+
+use Aws\ElasticsearchService\ElasticsearchPhpHandler;
+use Elasticsearch\ClientBuilder;
+use Laravel\Scout\Engines\ElasticsearchEngine;
+
 class ElasticsearchEngine extends Engine
 {
     /**
@@ -25,6 +30,15 @@ class ElasticsearchEngine extends Engine
      */
     public function __construct(Elastic $elastic, $index)
     {
+
+        $handler = new ElasticsearchPhpHandler('eu-west-1');
+        $elasticsearch = ClientBuilder::create()
+            ->setHandler($handler)
+            ->setHosts(config('scout.elasticsearch.config.hosts'))
+            ->build();
+        $this->elasticsearch = $elasticsearch;
+        $this->index = config('scout.elasticsearch.index');
+
         $this->elastic = $elastic;
         $this->index = $index;
     }
