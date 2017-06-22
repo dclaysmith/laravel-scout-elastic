@@ -1,6 +1,6 @@
 <?php
 
-namespace ScoutEngines\Elasticsearch;
+namespace dclaysmith\LaravelAWSElasticsearch;
 
 use Laravel\Scout\Builder;
 use Laravel\Scout\Engines\Engine;

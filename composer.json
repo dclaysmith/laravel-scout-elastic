@@ -1,5 +1,5 @@
 {
-    "name": "dclaysmith/laravel-scout-elastic",
+    "name": "dclaysmith/LaravelAWSElasticsearch",
     "description": "Elastic Driver for Laravel Scout",
     "keywords": ["laravel", "scout", "elasticsearch", "elastic"],
     "require": {
@@ -15,12 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "ScoutEngines\\Elasticsearch\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "ScoutEngines\\Elasticsearch\\Test\\": "tests"
+            "dclaysmith\\LaravelAWSElasticsearch\\": "src/"
         }
     },
     "suggest": {
