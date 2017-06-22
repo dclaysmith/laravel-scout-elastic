@@ -8,11 +8,6 @@ use Elasticsearch\Client as Elastic;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Collection as BaseCollection;
 
-
-use Aws\ElasticsearchService\ElasticsearchPhpHandler;
-use Elasticsearch\ClientBuilder;
-use Laravel\Scout\Engines\ElasticsearchEngine;
-
 class ElasticsearchEngine extends Engine
 {
     /**
