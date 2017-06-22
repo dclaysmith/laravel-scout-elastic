@@ -17,7 +17,7 @@ class SignedElasticsearchEngine extends ElasticsearchEngine
 
         $elasticsearch = ClientBuilder::create()
             ->setHandler($handler)
-            ->setHosts(config('scout.elasticsearch.config.hosts'))
+            ->setHosts(config('scout.elasticsearch.hosts'))
             ->build();
 
         $this->elastic = $elasticsearch;
